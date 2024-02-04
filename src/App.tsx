@@ -1,7 +1,17 @@
-import BxButton from './ui/BxButton.tsx';
+import { useState } from 'react';
+import BxButton from './ui/BxButton';
 
 function App() {
-  return <BxButton>count is</BxButton>;
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <BxButton count={count} counter onClick={() => setCount((c) => c + 1)}>
+        count is
+      </BxButton>
+      <BxButton menu>Bx-Button</BxButton>
+    </>
+  );
 }
 
 export default App;
