@@ -1,13 +1,46 @@
 {
   "name": "react-bitrix24",
-  "private": true,
-  "version": "0.0.0",
+  "description": "Component library in Bitrix24 style",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
+  "license": "GPL",
+  "module": "./dist/index.js",
+  "main": "./dist/index.umd.cjs",
+  "exports": {
+    "./css": "./dist/style.css",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
+  "homepage": "https://github.com/astrotrain55/react-bitrix24/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:astrotrain55/react-bitrix24.git"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "react",
+    "react-dom",
+    "typescript",
+    "components",
+    "bitrix24",
+    "bx24",
+    "storybook"
+  ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
+    "build-only": "vite build",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "format": "prettier --write src",
+    "preview": "vite preview --host",
+    "public:lib": "npm run build-only && npm publish",
+    "public": "npm run build-only && gh-pages -d dist -t --nojekyll"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -19,9 +52,12 @@
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "bitrix24-library": "^0.0.2",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "gh-pages": "^6.1.1",
+    "prettier": "3.2.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
