@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   base: '',
   publicDir: false,
-  plugins: [react()],
+  plugins: [react(), visualizer()],
   build: {
     lib: {
       entry: './src/lib.ts',

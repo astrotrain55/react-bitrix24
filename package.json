@@ -8,6 +8,7 @@
   "module": "./dist/index.js",
   "main": "./dist/index.umd.cjs",
   "exports": {
+    "./BxButton": "./src/ui/BxButton.vue",
     "./css": "./dist/style.css",
     ".": {
       "import": "./dist/index.js",
@@ -70,6 +71,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "gh-pages": "^6.1.1",
     "prettier": "3.2.5",
+    "rollup-plugin-visualizer": "^5.12.0",
     "storybook": "^7.6.12",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
