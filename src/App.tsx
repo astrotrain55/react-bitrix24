@@ -1,13 +1,7 @@
-import { useState } from 'react';
+import BxButton from './ui/BxButton.tsx';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-    </>
-  );
+  return <BxButton>count is</BxButton>;
 }
 
 export default App;
