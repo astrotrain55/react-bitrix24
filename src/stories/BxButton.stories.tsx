@@ -1,5 +1,5 @@
 import { fn } from '@storybook/test';
-import { BxButton, defaultProps, propsList as props } from '../../lib/components/BxButton';
+import { BxButton, defaultProps, propsValues, type Props } from '../../lib/components/BxButton';
 
 export default {
   title: 'BxButton',
@@ -31,27 +31,27 @@ export default {
       control: { type: 'text' },
     },
     type: {
-      options: props.types,
+      options: propsValues.types,
       defaultValue: defaultProps.type,
       control: { type: 'inline-radio' },
     },
     color: {
-      options: props.colors,
+      options: propsValues.colors,
       defaultValue: defaultProps.color,
       control: { type: 'select' },
     },
     size: {
-      options: props.sizes,
+      options: propsValues.sizes,
       defaultValue: defaultProps.size,
       control: { type: 'inline-radio' },
     },
     icon: {
-      options: props.icons,
+      options: propsValues.icons,
       defaultValue: defaultProps.icon,
       control: { type: 'select' },
     },
     loader: {
-      options: props.loaders,
+      options: propsValues.loaders,
       defaultValue: defaultProps.loader,
       control: { type: 'inline-radio' },
     },
@@ -86,7 +86,7 @@ export default {
   },
 };
 
-const Template = (args: any) => <BxButton {...args}>BxButton</BxButton>;
+const Template = (args: Props) => <BxButton {...args}>BxButton</BxButton>;
 
 export const Default = Template.bind({});
 
@@ -112,7 +112,7 @@ export const Default = Template.bind({});
 //   },
 // });
 
-// export const Colors = Story('color', props.colors);
-// export const Sizes = Story('size', props.sizes);
-// export const Icons = Story('icon', props.icons);
-// export const Loaders = Story('loader', props.loaders);
+// export const Colors = Story('color', propsValues.colors);
+// export const Sizes = Story('size', propsValues.sizes);
+// export const Icons = Story('icon', propsValues.icons);
+// export const Loaders = Story('loader', propsValues.loaders);
