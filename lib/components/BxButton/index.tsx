@@ -1,4 +1,4 @@
-import { loadStyles } from '../utils/loadStyles';
+import { loadStyles } from '../../utils/loadStyles';
 
 loadStyles();
 
@@ -91,7 +91,7 @@ export const defaultProps = {
   onToggleMenu: () => null,
 };
 
-export default function BxButton(initProps: any) {
+export function BxButton(initProps: any) {
   const props = {
     ...defaultProps,
     ...initProps,

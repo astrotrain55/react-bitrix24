@@ -1,13 +1,18 @@
-import { action } from '@storybook/addon-actions';
-import BxButton, { defaultProps, propsList as props } from '../ui/BxButton';
+import { fn } from '@storybook/test';
+import { BxButton, defaultProps, propsList as props } from '../../lib/components/BxButton';
 
 export default {
   title: 'BxButton',
   component: BxButton,
+  parameters: {
+    actions: {
+      argTypesRegex: '^on.*',
+    },
+  },
   args: {
     default: 'BxButton',
-    click: action('click'),
-    'toggle-menu': action('toggle-menu'),
+    onClick: fn(),
+    onToggleMenu: fn(),
     type: defaultProps.type,
     color: defaultProps.color,
     size: defaultProps.size,

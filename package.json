@@ -5,24 +5,18 @@
   "version": "0.0.1",
   "type": "module",
   "license": "GPL",
-  "module": "./dist/index.js",
-  "main": "./dist/index.umd.cjs",
-  "exports": {
-    "./BxButton": "./src/ui/BxButton.vue",
-    "./css": "./dist/style.css",
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
-    }
-  },
-  "homepage": "https://github.com/astrotrain55/react-bitrix24/",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "homepage": "https://astrotrain55.github.io/react-bitrix24/",
   "repository": {
     "type": "git",
     "url": "git@github.com:astrotrain55/react-bitrix24.git"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "keywords": [
     "react",
@@ -35,45 +29,39 @@
   ],
   "scripts": {
     "dev": "vite --host",
-    "build-only": "vite build",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write src",
+    "build": "tsc --p ./tsconfig-build.json && vite build",
+    "format": "prettier . --write",
     "preview": "vite preview --host",
     "public:lib": "npm run build && npm publish",
     "public": "npm run build-storybook && gh-pages -d storybook-static -t --nojekyll",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^7.6.12",
-    "@storybook/addon-essentials": "^7.6.12",
-    "@storybook/addon-interactions": "^7.6.12",
-    "@storybook/addon-links": "^7.6.12",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.12",
-    "@storybook/react": "^7.6.12",
-    "@storybook/react-vite": "^7.6.12",
-    "@storybook/test": "^7.6.12",
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "bitrix24-library": "^0.0.2",
-    "eslint": "^8.55.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "eslint-plugin-storybook": "^0.6.15",
+    "@storybook/addon-essentials": "^8.1.5",
+    "@storybook/blocks": "^8.1.5",
+    "@storybook/react": "^8.1.5",
+    "@storybook/react-vite": "^8.1.5",
+    "@storybook/test": "^8.1.5",
+    "@types/node": "^20.14.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "bitrix24-library": "^0.1.0",
     "gh-pages": "^6.1.1",
-    "prettier": "3.2.5",
+    "glob": "^10.4.1",
+    "prettier": "3.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rollup-plugin-visualizer": "^5.12.0",
-    "storybook": "^7.6.12",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "storybook": "^8.1.5",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.12",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-lib-inject-css": "^2.1.1"
   }
 }

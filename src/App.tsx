@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BxButton from './ui/BxButton';
+import { BxButton } from '..';
 
 function App() {
   const [count, setCount] = useState(0);
