@@ -96,21 +96,6 @@ export type Props = {
   onToggleMenu: Function;
 };
 
-export const defaultProps: Omit<Props, 'children' | 'onClick' | 'onToggleMenu'> = {
-  type: 'button',
-  color: 'default',
-  size: 'md',
-  icon: '',
-  loader: '',
-  count: 0,
-  counter: false,
-  disabled: false,
-  dropdown: false,
-  round: false,
-  noCaps: false,
-  menu: false,
-};
-
 export const propsValues: TypesProps = {
   types: ['button', 'submit', 'reset'],
   colors: [
@@ -127,7 +112,7 @@ export const propsValues: TypesProps = {
     'light',
     'light-border',
   ],
-  sizes: ['xs', 'sm', 'md', 'lg'],
+  sizes: ['md', 'xs', 'sm', 'lg'],
   icons: [
     '',
     'add',
@@ -181,4 +166,19 @@ export const propsValues: TypesProps = {
     'demo',
   ],
   loaders: ['', 'clock', 'wait'],
+};
+
+export const defaultProps: Omit<Props, 'children' | 'onClick' | 'onToggleMenu'> = {
+  type: propsValues.types[0],
+  color: propsValues.colors[0],
+  size: propsValues.sizes[0],
+  icon: propsValues.icons[0],
+  loader: propsValues.loaders[0],
+  count: 0,
+  counter: false,
+  disabled: false,
+  dropdown: false,
+  round: false,
+  noCaps: false,
+  menu: false,
 };
