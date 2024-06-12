@@ -4,7 +4,7 @@ import { Story } from './Story';
 import { BxTextarea, defaultProps, propsValues } from '../../lib/components/BxTextarea';
 
 const meta: Meta<typeof BxTextarea> = {
-  title: 'BxTextarea',
+  title: 'Form/BxTextarea',
   args: {
     onInput: fn(),
     value: defaultProps.value,

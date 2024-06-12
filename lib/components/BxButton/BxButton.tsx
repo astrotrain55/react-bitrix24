@@ -1,5 +1,5 @@
-import { defaultProps, propsValues, type Props } from './props';
-import { getClassName, type ClassListType } from '../../utils/getClassName';
+import { defaultProps, type Props, propsValues } from './BxButton.props';
+import { type ClassListType, getClassName } from '../../utils/getClassName';
 
 export function BxButton({ children, ...props }: Partial<Props>) {
   const {
@@ -22,8 +22,8 @@ export function BxButton({ children, ...props }: Partial<Props>) {
   const classList: ClassListType = {
     [`ui-btn-${color}`]: propsValues.colors.includes(color),
     [`ui-btn-${size}`]: propsValues.sizes.includes(size),
-    [`ui-btn-icon-${icon}`]: icon && propsValues.icons.includes(icon),
-    [`ui-btn-${loader}`]: loader && propsValues.loaders.includes(loader),
+    [`ui-btn-icon-${icon}`]: Boolean(icon) && propsValues.icons.includes(icon),
+    [`ui-btn-${loader}`]: Boolean(loader) && propsValues.loaders.includes(loader),
     'ui-btn-disabled': disabled,
     'ui-btn-dropdown': dropdown,
     'ui-btn-round': round,

@@ -1,5 +1,5 @@
-import { defaultProps, propsValues, type Props } from './props';
-import { getClassName, type ClassListType } from '../../utils/getClassName';
+import { defaultProps, type Props, propsValues } from './BxAlert.props';
+import { type ClassListType, getClassName } from '../../utils/getClassName';
 
 export function BxAlert({ children, ...props }: Partial<Props>) {
   const {
@@ -16,7 +16,7 @@ export function BxAlert({ children, ...props }: Partial<Props>) {
   const classList: ClassListType = {
     [`ui-alert-${size}`]: propsValues.sizes.includes(size),
     [`ui-alert-${color}`]: propsValues.colors.includes(color),
-    [`ui-alert-icon-${icon}`]: icon && propsValues.icons.includes(icon),
+    [`ui-alert-icon-${icon}`]: Boolean(icon) && propsValues.icons.includes(icon),
     'ui-alert-text-center': center,
     'ui-alert-inline': inline,
   };

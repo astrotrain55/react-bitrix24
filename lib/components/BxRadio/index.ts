@@ -1,2 +1,2 @@
 export { BxRadio } from './BxRadio';
-export { defaultProps, type Props } from './props';
+export { defaultProps, type Props } from './BxRadio.props';

@@ -1,2 +1,2 @@
 export { BxCheckbox } from './BxCheckbox';
-export { defaultProps, type Props } from './props';
+export { defaultProps, type Props } from './BxCheckbox.props';

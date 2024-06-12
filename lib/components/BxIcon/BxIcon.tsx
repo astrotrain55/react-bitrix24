@@ -1,4 +1,4 @@
-import { defaultProps, type Props, propsValues } from './props';
+import { defaultProps, type Props, propsValues } from './BxIcon.props';
 import { type ClassListType, getClassName } from '../../utils/getClassName';
 
 export function BxIcon(props: Partial<Props>) {

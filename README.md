@@ -1,33 +1,47 @@
-# React + TypeScript + Vite
+# react-bitrix24
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Библиотека react-компонентов в стилистике Bitrix24
 
-Currently, two official plugins are available:
+## Установка
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```nodejs
+npm i -S react-bitrix24@latest bitrix24-library@latest
+```
 
-## Expanding the ESLint configuration
+## Подключение
+```tsx
+// App.tsx
+import { BxButton, loadStyles } from 'react-bitrix24';
+import Bitrix24 from 'bitrix24-library';
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+function App() {
+  Bitrix24.init().then((BX24) => {
+    loadStyles(BX24);
+  });
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+  return (
+    <BxButton menu>BxButton</BxButton>
+  );
 }
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Компоненты
 
-## Links
-[Create a Component Library Fast🚀(using Vite's library mode)](https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma)
+### [Storybook](https://astrotrain55.github.io/react-bitrix24/)
+
+* bx-alert
+* bx-button
+* bx-checkbox
+* bx-icon
+* bx-progressbar
+* bx-radio
+* bx-textarea
+
+## Ссылки
+
+* [UI-библиотека](https://dev.1c-bitrix.ru/api_d7/bitrix/ui/index.php)
+* [vue-bitrix24](https://www.npmjs.com/package/vue-bitrix24)
+* [bitrix24-library](https://www.npmjs.com/package/bitrix24-library)
+* [bitrix24-create-app](https://www.npmjs.com/package/bitrix24-create-app)
+* [bitrix24-stickerpack-app](https://github.com/astrotrain55/bitrix24-stickerpack-app)
+* [Create a Component Library Fast🚀(using Vite's library mode)](https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma)

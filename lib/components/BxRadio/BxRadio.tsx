@@ -1,6 +1,6 @@
-import { defaultProps, type Props } from './props';
-import styles from './styles.module.css';
-import { ClassListType, getClassName } from '../../utils/getClassName.ts';
+import { defaultProps, type Props } from './BxRadio.props';
+import styles from './BxRadio.module.css';
+import { getClassName } from '../../utils/getClassName';
 
 export function BxRadio({ children, ...props }: Partial<Props>) {
   const {
@@ -11,13 +11,8 @@ export function BxRadio({ children, ...props }: Partial<Props>) {
     disabled = defaultProps.disabled,
   } = props;
 
-  const classList: ClassListType = Object.values(styles).reduce((acc: ClassListType, name) => {
-    acc[name] = true;
-    return acc;
-  }, {});
-
   return (
-    <label className={getClassName('ui-ctl ui-ctl-radio', classList)}>
+    <label className={getClassName('ui-ctl ui-ctl-radio', Object.values(styles))}>
       <input
         className="ui-ctl-element"
         type="radio"

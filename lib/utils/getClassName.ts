@@ -1,9 +1,11 @@
-export type ClassListType = Record<string, boolean | string>;
+export type ClassListType = string[] | Record<string, boolean>;
 
 export function getClassName(initClassList: string, classList: ClassListType) {
+  if (Array.isArray(classList)) return [initClassList, ...classList].join(' ');
+
   return Object.entries(classList)
     .reduce(
-      (acc, [name, isName]) => {
+      (acc: string[], [name, isName]) => {
         if (isName) acc.push(name);
         return acc;
       },

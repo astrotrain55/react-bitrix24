@@ -1,8 +1,12 @@
 import { Meta } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Story } from './Story.tsx';
-import { BxButton } from '../../lib';
-import { defaultProps, propsValues, type TypesPropsList } from '../../lib/components/BxButton';
+import { Story } from './Story';
+import {
+  BxButton,
+  defaultProps,
+  propsValues,
+  type TypesPropsList,
+} from '../../lib/components/BxButton';
 
 const meta: Meta<typeof BxButton> = {
   title: 'BxButton',
