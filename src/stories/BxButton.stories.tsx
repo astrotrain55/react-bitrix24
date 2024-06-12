@@ -1,5 +1,6 @@
-import { Args, Meta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import { fn } from '@storybook/test';
+import { Story } from './Story.tsx';
 import { BxButton } from '../../lib';
 import { defaultProps, propsValues, type TypesPropsList } from '../../lib/components/BxButton';
 
@@ -76,32 +77,8 @@ const meta: Meta<typeof BxButton> = {
 };
 
 export default meta;
-
-const Template = ({ children, ...args }: Args) => <BxButton {...args}>{children}</BxButton>;
-
-const Story = (propName: string, propList: TypesPropsList[]) => ({
-  render(args: Args) {
-    const component = (dynamicProp: Record<string, TypesPropsList>, key: number) => (
-      <div className="component" key={key}>
-        {Template({ ...args, ...dynamicProp })}
-      </div>
-    );
-
-    return propList
-      .map((value) => ({ [propName]: value }))
-      .map((prop, key) => component(prop, key));
-  },
-  argTypes: {
-    [propName]: {
-      table: {
-        disable: true,
-      },
-    },
-  },
-});
-
-export const Default = Template.bind({});
-export const Colors = Story('color', propsValues.colors);
-export const Sizes = Story('size', propsValues.sizes);
-export const Icons = Story('icon', propsValues.icons);
-export const Loaders = Story('loader', propsValues.loaders);
+export const Default = Story(BxButton).bind({});
+export const Colors = Story<TypesPropsList>(BxButton, 'color', propsValues.colors);
+export const Sizes = Story<TypesPropsList>(BxButton, 'size', propsValues.sizes);
+export const Icons = Story<TypesPropsList>(BxButton, 'icon', propsValues.icons);
+export const Loaders = Story<TypesPropsList>(BxButton, 'loader', propsValues.loaders);
