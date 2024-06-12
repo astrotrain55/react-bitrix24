@@ -1,2 +1,2 @@
 export { BxButton } from './BxButton.tsx';
-export { defaultProps, propsValues, type Props } from './props.ts';
+export { defaultProps, propsValues, type Props, type TypesPropsList } from './props.ts';

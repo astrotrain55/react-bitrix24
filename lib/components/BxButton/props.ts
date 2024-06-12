@@ -1,3 +1,5 @@
+import React from 'react';
+
 type PropType = 'button' | 'submit' | 'reset';
 
 type PropSize = 'xs' | 'sm' | 'md' | 'lg';
@@ -78,8 +80,10 @@ type TypesProps = {
   loaders: PropLoader[];
 };
 
+export type TypesPropsList = PropType | PropColor | PropSize | PropIcon | PropLoader;
+
 export type Props = {
-  children: string;
+  children: React.ReactNode;
   type: PropType;
   color: PropColor;
   size: PropSize;
@@ -92,8 +96,8 @@ export type Props = {
   round: boolean;
   noCaps: boolean;
   menu: boolean;
-  onClick: Function;
-  onToggleMenu: Function;
+  onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onToggleMenu: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
 export const propsValues: TypesProps = {

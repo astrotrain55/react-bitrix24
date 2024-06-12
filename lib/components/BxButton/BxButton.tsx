@@ -1,7 +1,7 @@
 import { defaultProps, propsValues, type Props } from './props';
 import { getClassName, type ClassListType } from '../../utils/getClassName';
 
-export function BxButton({ children, ...props }: Props) {
+export function BxButton({ children, ...props }: Partial<Props>) {
   const {
     onClick = () => null,
     onToggleMenu = () => null,
