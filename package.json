@@ -2,7 +2,7 @@
   "name": "react-bitrix24",
   "description": "Component library in Bitrix24 style",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "license": "GPL",
   "main": "dist/index.js",
@@ -28,7 +28,7 @@
     "storybook"
   ],
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite --host --port 4200",
     "build": "tsc --p ./tsconfig-build.json && vite build",
     "format": "prettier . --write",
     "preview": "vite preview --host",

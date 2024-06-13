@@ -29,19 +29,24 @@ function App() {
 
 ### [Storybook](https://astrotrain55.github.io/react-bitrix24/)
 
-* bx-alert
-* bx-button
-* bx-checkbox
-* bx-icon
-* bx-progressbar
-* bx-radio
-* bx-textarea
+* BxAlert
+* BxButton
+* BxCheckbox
+* BxEntitySelector
+* BxIcon
+* BxInput
+* BxInputFile
+* BxProgressbar
+* BxRadio
+* BxTextarea
 
 ## Ссылки
 
-* [UI-библиотека](https://dev.1c-bitrix.ru/api_d7/bitrix/ui/index.php)
 * [vue-bitrix24](https://www.npmjs.com/package/vue-bitrix24)
 * [bitrix24-library](https://www.npmjs.com/package/bitrix24-library)
 * [bitrix24-create-app](https://www.npmjs.com/package/bitrix24-create-app)
 * [bitrix24-stickerpack-app](https://github.com/astrotrain55/bitrix24-stickerpack-app)
+
+
+* [UI-библиотека](https://dev.1c-bitrix.ru/api_d7/bitrix/ui/index.php)
 * [Create a Component Library Fast🚀(using Vite's library mode)](https://dev.to/receter/how-to-create-a-react-component-library-using-vites-library-mode-4lma)

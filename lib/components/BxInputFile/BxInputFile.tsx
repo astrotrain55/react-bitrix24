@@ -4,8 +4,6 @@ import styles from './BxInputFile.module.css';
 import { getClassName } from '../../utils/getClassName';
 import { formatSizeUnits } from '../../utils/formatSizeUnits';
 
-console.log(styles);
-
 export function BxInputFile(props: Partial<Props>) {
   const {
     onChange = () => null,
